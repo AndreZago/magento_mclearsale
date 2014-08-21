@@ -82,7 +82,7 @@ class Prestige_Clearsale_Block_Clearsale extends Mage_Adminhtml_Block_Template
 			        
 			        $_clearsale['Dados_Cobranca']['Cobranca_Nome'] = strtoupper(str_ireplace(' ', '+', str_replace($array_from, $array_to, $endereco_cobranca->getName())));
 			        $_clearsale['Dados_Cobranca']['Cobranca_Email'] = str_ireplace(' ', '+', $endereco_cobranca->getEmail());
-			        
+			        $_clearsale['Dados_Cobranca']['Cobranca_Nascimento'] = str_ireplace(array(' ','/'), array('+','-'), $_customer->getDob());
 			        if ($_customer->getCnpj()) $_clearsale['Dados_Cobranca']['Cobranca_Documento'] = str_ireplace(' ', '+', $_customer->getCnpj());
 			        else  $_clearsale['Dados_Cobranca']['Cobranca_Documento'] = str_ireplace(' ', '+', $_customer->getCpf());
 			        
